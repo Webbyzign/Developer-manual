@@ -1,487 +1,603 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>12-Week Roadmap: Islamic & Spiritual Wellness Habit Tracker</title>
-<style>
-@page { margin: 0; }
-*, *::before, *::after { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
-html { background-color: #ffffff; }
-@media (prefers-color-scheme: dark) {
-html { background-color: #1f1f1f; }
-}
-body {
-padding: 24px 0;
-margin: 0 auto;
-max-width: 900px !important;
-border: none !important;
-background: transparent !important;
-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-color: #1e293b;
-line-height: 1.45;
-}
-.page {
-height: 297mm;
-margin: 0 auto 12px auto;
-padding: 16mm 18mm 12mm 18mm;
-background-color: #ffffff;
-border: 1px solid rgba(0, 0, 0, 0.12);
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-position: relative;
-overflow: hidden;
-}
-@media screen and (max-width: 600px) {
-body { padding: 16px 0; }
-.page {
-margin: 0 auto 8px auto;
-border: none;
-padding: 12px 16px;
-}
-}
-.page-content {
-flex: 1 1 0;
-min-height: 0;
-overflow: hidden;
-}
-.page-footer {
-flex-shrink: 0;
-margin-top: auto;
-padding-top: 3mm;
-border-top: 1px solid #e2e8f0;
-display: flex;
-justify-content: space-between;
-align-items: center;
-font-size: 8.5pt;
-color: #64748b;
-}
-​/* Header & Banner Styles */
-.header-banner {
-background: linear-gradient(135deg, #064e3b 0%, #047857 100%);
-color: #ffffff;
-padding: 20px 24px;
-border-radius: 10px;
-margin-bottom: 18px;
-border-bottom: 4px solid #f59e0b;
-}
-.header-banner h1 {
-margin: 0 0 6px 0;
-font-size: 20pt;
-font-weight: 800;
-letter-spacing: -0.02em;
-color: #ffffff;
-}
-.header-banner p {
-margin: 0;
-font-size: 10pt;
-color: #a7f3d0;
-font-weight: 500;
-}
-​/* Meta Data Cards */
-.meta-grid {
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-gap: 10px;
-margin-bottom: 18px;
-}
-.meta-card {
-background: #f8fafc;
-border: 1px solid #e2e8f0;
-border-radius: 8px;
-padding: 10px 12px;
-}
-.meta-card .label {
-font-size: 7.5pt;
-text-transform: uppercase;
-letter-spacing: 0.05em;
-color: #64748b;
-font-weight: 700;
-margin-bottom: 4px;
-}
-.meta-card .value {
-font-size: 10pt;
-font-weight: 700;
-color: #064e3b;
-}
-​/* Section Styling */
-.section-header {
-display: flex;
-align-items: center;
-gap: 10px;
-margin-bottom: 12px;
-border-bottom: 2px solid #047857;
-padding-bottom: 6px;
-}
-.section-badge {
-background: #047857;
-color: #ffffff;
-font-size: 9pt;
-font-weight: 800;
-padding: 3px 10px;
-border-radius: 4px;
-text-transform: uppercase;
-}
-.section-title {
-margin: 0;
-font-size: 13pt;
-font-weight: 700;
-color: #0f172a;
-}
-​/* Week Block Cards */
-.week-card {
-background: #ffffff;
-border: 1px solid #cbd5e1;
-border-left: 5px solid #047857;
-border-radius: 8px;
-padding: 12px 14px;
-margin-bottom: 12px;
-}
-.week-card.phase-2 { border-left-color: #0284c7; }
-.week-card.phase-3 { border-left-color: #d97706; }
-.week-card.phase-4 { border-left-color: #16a34a; }
-​.week-header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin-bottom: 8px;
-}
-.week-title {
-font-size: 11pt;
-font-weight: 700;
-color: #0f172a;
-margin: 0;
-}
-.week-tag {
-font-size: 8pt;
-font-weight: 700;
-padding: 2px 8px;
-border-radius: 12px;
-background: #f1f5f9;
-color: #475569;
-}
-​.task-list {
-margin: 0;
-padding-left: 18px;
-font-size: 9.5pt;
-color: #334155;
-}
-.task-list li {
-margin-bottom: 5px;
-}
-.task-list li:last-child {
-margin-bottom: 0;
-}
-.task-list strong {
-color: #0f172a;
-}
-​/* Infographic / Summary Cards */
-.summary-box {
-background: #f0fdf4;
-border: 1px solid #bbf7d0;
-border-radius: 8px;
-padding: 12px;
-margin-top: 14px;
-}
-.summary-box h4 {
-margin: 0 0 6px 0;
-font-size: 10pt;
-color: #166534;
-}
-.summary-box p {
-margin: 0;
-font-size: 9pt;
-color: #15803d;
-}
-​/* Key Checklist Matrix Table */
-.matrix-table {
-width: 100%;
-border-collapse: collapse;
-margin-top: 10px;
-font-size: 9pt;
-}
-.matrix-table th {
-background: #047857;
-color: #ffffff;
-text-align: left;
-padding: 8px 10px;
-font-weight: 700;
-}
-.matrix-table td {
-padding: 7px 10px;
-border-bottom: 1px solid #e2e8f0;
-}
-.matrix-table tr:nth-child(even) {
-background: #f8fafc;
-}
-​/* Callout Note */
-.callout {
-background: #fffbebfb;
-border: 1px solid #fde68a;
-border-left: 4px solid #f59e0b;
-padding: 10px 12px;
-border-radius: 6px;
-font-size: 9pt;
-color: #78350f;
-margin-bottom: 12px;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Islamic & Spiritual Wellness Habit Tracker - 12-Week Roadmap</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            emerald: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#064e3b',
+              950: '#022c22',
+            },
+            amber: {
+              400: '#fbbf24',
+              500: '#f59e0b',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            arabic: ['"Amiri"', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+    }
+    .dark .glass-card {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #059669;
+      border-radius: 10px;
+    }
+  </style>
 </head>
-<body>
-<div contenteditable="true">
-​<!-- PAGE 1 -->
-<section class="page">
-<div class="page-content">
-​<!-- Banner -->
-<div class="header-banner">
-<h1>Islamic & Spiritual Wellness Habit Tracker</h1>
-<p>12-Week Non-Technical Execution Roadmap & Action Guide</p>
-</div>
-​<!-- Overview Stats -->
-<div class="meta-grid">
-<div class="meta-card">
-<div class="label">Total Duration</div>
-<div class="value">12 Weeks (3 Months)</div>
-</div>
-<div class="meta-card">
-<div class="label">Target Output</div>
-<div class="value">iOS & Android MVP</div>
-</div>
-<div class="meta-card">
-<div class="label">Core Focus</div>
-<div class="value">Salah, Dhikr, Journal</div>
-</div>
-<div class="meta-card">
-<div class="label">Testing Window</div>
-<div class="value">Weeks 10 & 11</div>
-</div>
-</div>
-​<div class="callout">
-<strong>Strategic Focus:</strong> This roadmap maps out the exact non-technical step-by-step tasks required to plan, test, refine, and release your app within 90 days without writing code directly.
-</div>
-​<!-- Phase 1 Header -->
-<div class="section-header">
-<span class="section-badge">Phase 1</span>
-<h2 class="section-title">Research, Strategy & App Design (Weeks 1–3)</h2>
-</div>
-​<!-- Week 1 Card -->
-<div class="week-card">
-<div class="week-header">
-<h3 class="week-title">Week 1: Market Research & Feature Blueprint</h3>
-<span class="week-tag">Strategy & Vision</span>
-</div>
-<ul class="task-list">
-<li><strong>Competitor Analysis:</strong> Download 3–4 Islamic apps (Tarteel, Muslim Habits, Pillars, Habitica). Note down strengths, missing options, and screen layouts.</li>
-<li><strong>Define Unique Value:</strong> Clarify your core vision — combining prayer/dhikr tracking with daily mental wellness and personal reflection.</li>
-<li><strong>Categorize Features:</strong> Split planned features into <em>MVP Essentials</em> (Salah, Tasbeeh counter, journal, streaks) and <em>Future Updates</em> (community groups, audio recitations).</li>
-</ul>
-</div>
-​<!-- Week 2 Card -->
-<div class="week-card">
-<div class="week-header">
-<h3 class="week-title">Week 2: User Journeys & Screen Sketches</h3>
-<span class="week-tag">App Flow & UX</span>
-</div>
-<ul class="task-list">
-<li><strong>Map User Steps:</strong> Outline the step-by-step path: Onboarding → Location Setup → Daily Home View → Complete Habit → Journal Entry.</li>
-<li><strong>Draft Screen Wireframes:</strong> Sketch key screens on paper or Figma:
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans transition-colors duration-300 min-h-screen flex flex-col">
 
-• Screen 1: Home Dashboard (Upcoming Prayer & Habit Checklist)
+  <!-- TOP NAVBAR -->
+  <header class="sticky top-0 z-50 bg-emerald-900/90 text-white backdrop-blur-md border-b border-emerald-700/50 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-400/40 flex items-center justify-center text-amber-400 font-arabic text-xl font-bold shadow-inner">
+          ☪
+        </div>
+        <div>
+          <h1 class="text-lg font-bold tracking-tight leading-none text-white">Habit Tracker Roadmap</h1>
+          <p class="text-xs text-emerald-200 mt-0.5">12-Week Non-Technical Action Plan</p>
+        </div>
+      </div>
 
-• Screen 2: Tasbeeh / Dhikr Counter View
+      <div class="flex items-center space-x-3">
+        <!-- Theme Toggle Button -->
+        <button id="themeToggle" class="p-2 rounded-lg bg-emerald-800/60 hover:bg-emerald-700 text-emerald-100 transition-all border border-emerald-600/40" title="Toggle Theme">
+          <i id="themeIcon" class="fas fa-moon"></i>
+        </button>
+        <!-- Reset Progress Button -->
+        <button onclick="resetProgress()" class="text-xs px-3 py-2 rounded-lg bg-emerald-800/60 hover:bg-red-900/40 hover:text-red-300 text-emerald-200 border border-emerald-600/40 transition-all">
+          <i class="fas fa-rotate-left mr-1"></i> Reset
+        </button>
+      </div>
+    </div>
+  </header>
 
-• Screen 3: Daily Reflection & Gratitude Journal
+  <!-- MAIN CONTAINER -->
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
 
-• Screen 4: Streak Calendar & Progress Stats
-</li>
-</ul>
-</div>
-​<!-- Week 3 Card -->
-<div class="week-card">
-<div class="week-header">
-<h3 class="week-title">Week 3: Visual Identity & Prototype Finalization</h3>
-<span class="week-tag">UI Design & Themes</span>
-</div>
-<ul class="task-list">
-<li><strong>Brand Color & Typography:</strong> Select a calm spiritual palette (emerald green, warm cream, subtle gold, neutral dark slate).</li>
-<li><strong>Design High-Fidelity Views:</strong> Finalize exact screen designs in Figma so you have a complete visual model before build phase.</li>
-<li><strong>Task Management Setup:</strong> Organize a project board in Notion or Trello with weekly checklists.</li>
-</ul>
-</div>
-​</div>
-<footer class="page-footer">
-<span>Islamic Habit Tracker Roadmap</span>
-<span>Page 1 of 3</span>
-</footer>
-</section>
-​<!-- PAGE 2 -->
-<section class="page">
-<div class="page-content">
-​<!-- Phase 2 Header -->
-<div class="section-header">
-<span class="section-badge" style="background:#0284c7;">Phase 2</span>
-<h2 class="section-title">Core App Building & Engine Setup (Weeks 4–8)</h2>
-</div>
-​<!-- Week 4 Card -->
-<div class="week-card phase-2">
-<div class="week-header">
-<h3 class="week-title">Week 4: User Accounts & Core Layout Structure</h3>
-<span class="week-tag">Foundation</span>
-</div>
-<ul class="task-list">
-<li><strong>Onboarding Flow:</strong> Build user registration, welcome intro screens, and login options (Email, Google, Apple ID).</li>
-<li><strong>App Navigation Bar:</strong> Setup the main tab bar at the bottom to easily switch between Home, Tasbeeh, Reflection, and Settings.</li>
-</ul>
-</div>
-​<!-- Week 5 Card -->
-<div class="week-card phase-2">
-<div class="week-header">
-<h3 class="week-title">Week 5: Prayer Times & Daily Dashboard</h3>
-<span class="week-tag">Prayer API & Home</span>
-</div>
-<ul class="task-list">
-<li><strong>Location Services Integration:</strong> Enable auto-detection of user location to calculate exact local prayer times.</li>
-<li><strong>Build Main Dashboard:</strong> Display current Hijri date, next prayer countdown, and daily active habits in a clean list.</li>
-</ul>
-</div>
-​<!-- Week 6 Card -->
-<div class="week-card phase-2">
-<div class="week-header">
-<h3 class="week-title">Week 6: Islamic & Wellness Habit Trackers</h3>
-<span class="week-tag">Habits Engine</span>
-</div>
-<ul class="task-list">
-<li><strong>Habit Checklists:</strong> Create tap-to-complete actions for daily Salah, Quran reading pages, and custom habits.</li>
-<li><strong>Habit Streaks System:</strong> Add daily counters to show consecutive completion days and build user consistency.</li>
-</ul>
-</div>
-​<!-- Week 7 Card -->
-<div class="week-card phase-2">
-<div class="week-header">
-<h3 class="week-title">Week 7: Tasbeeh Counter & Reflection Journal</h3>
-<span class="week-tag">Spiritual Tools</span>
-</div>
-<ul class="task-list">
-<li><strong>Digital Tasbeeh Counter:</strong> Build a smooth counter screen with sound/vibration feedback, target counts, and quick reset.</li>
-<li><strong>Daily Journal Module:</strong> Create a daily writing space with mood check-ins (1–5) and prompts for spiritual gratitude.</li>
-</ul>
-</div>
-​<!-- Week 8 Card -->
-<div class="week-card phase-2">
-<div class="week-header">
-<h3 class="week-title">Week 8: Reminders & Notification Setup</h3>
-<span class="week-tag">Notifications</span>
-</div>
-<ul class="task-list">
-<li><strong>Prayer Alerts:</strong> Configure automated notifications before or at each prayer time based on local times.</li>
-<li><strong>Daily Habit Nudges:</strong> Set customizable morning/evening reminders for Adhkar and daily reflection journaling.</li>
-</ul>
-</div>
-​</div>
-<footer class="page-footer">
-<span>Islamic Habit Tracker Roadmap</span>
-<span>Page 2 of 3</span>
-</footer>
-</section>
-​<!-- PAGE 3 -->
-<section class="page">
-<div class="page-content">
-​<!-- Phase 3 Header -->
-<div class="section-header">
-<span class="section-badge" style="background:#d97706;">Phase 3</span>
-<h2 class="section-title">Refinement, Testing & Bug Fixing (Weeks 9–10)</h2>
-</div>
-​<!-- Week 9 Card -->
-<div class="week-card phase-3">
-<div class="week-header">
-<h3 class="week-title">Week 9: Visual Polish & Offline Support</h3>
-<span class="week-tag">User Experience</span>
-</div>
-<ul class="task-list">
-<li><strong>Animations & Micro-Interactions:</strong> Add smooth checkmark completion animations and subtle haptic feedback.</li>
-<li><strong>Offline Functionality:</strong> Ensure prayer times, habit checks, and journal entries work fully without an active internet connection.</li>
-</ul>
-</div>
-​<!-- Week 10 Card -->
-<div class="week-card phase-3">
-<div class="week-header">
-<h3 class="week-title">Week 10: Closed Beta Testing & Community Feedback</h3>
-<span class="week-tag">Beta Testing</span>
-</div>
-<ul class="task-list">
-<li><strong>Beta Build Distribution:</strong> Share test build with 15–30 testers (family, friends, community members) via TestFlight / Google Play.</li>
-<li><strong>Feedback & Bug Fixing:</strong> Collect user feedback on prayer time accuracy, notification reliability, and fix reported issues.</li>
-</ul>
-</div>
-​<!-- Phase 4 Header -->
-<div class="section-header" style="margin-top:16px;">
-<span class="section-badge" style="background:#16a34a;">Phase 4</span>
-<h2 class="section-title">App Store Launch & Deployment (Weeks 11–12)</h2>
-</div>
-​<!-- Week 11 Card -->
-<div class="week-card phase-4">
-<div class="week-header">
-<h3 class="week-title">Week 11: Store Page Setup & Final QA</h3>
-<span class="week-tag">Preparation</span>
-</div>
-<ul class="task-list">
-<li><strong>App Store Listings:</strong> Write app descriptions, keywords, privacy policy terms, and design preview screenshots.</li>
-<li><strong>Final Quality Audit:</strong> Verify overall app performance, time zone updates, and notification triggers.</li>
-</ul>
-</div>
-​<!-- Week 12 Card -->
-<div class="week-card phase-4">
-<div class="week-header">
-<h3 class="week-title">Week 12: Public Launch & Growth</h3>
-<span class="week-tag">Release</span>
-</div>
-<ul class="task-list">
-<li><strong>Production Launch:</strong> Submit and publish application on Apple App Store and Google Play Store.</li>
-<li><strong>Community Outreach:</strong> Share store links with personal networks, Islamic groups, and social channels.</li>
-</ul>
-</div>
-​<!-- Deliverables Summary Table -->
-<div style="margin-top:14px;">
-<h3 style="font-size:10pt; margin:0 0 6px 0; color:#0f172a; text-transform:uppercase; letter-spacing:0.05em;">Weekly Milestones Overview</h3>
-<table class="matrix-table">
-<thead>
-<tr>
-<th style="width:20%;">Phase</th>
-<th style="width:20%;">Weeks</th>
-<th style="width:60%;">Key Milestone Output</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>1. Strategy & Design</strong></td>
-<td>Weeks 1 – 3</td>
-<td>Wireframes, Figma UI, Competitor Blueprint, Task Board</td>
-</tr>
-<tr>
-<td><strong>2. Core Building</strong></td>
-<td>Weeks 4 – 8</td>
-<td>Auth, Prayer Engine, Habit Streaks, Tasbeeh & Notifications</td>
-</tr>
-<tr>
-<td><strong>3. Testing & Polish</strong></td>
-<td>Weeks 9 – 10</td>
-<td>Offline Mode, 20-User Beta Release, Bug Resolution</td>
-</tr>
-<tr>
-<td><strong>4. Launch</strong></td>
-<td>Weeks 11 – 12</td>
-<td>Store Graphics, Apple/Google Approval, Public Release</td>
-</tr>
-</tbody>
-</table>
-</div>
-​</div>
-<footer class="page-footer">
-<span>Islamic Habit Tracker Roadmap</span>
-<span>Page 3 of 3</span>
-</footer>
-</section>
-​</div>
+    <!-- LEFT COLUMN: ROADMAP NAVIGATOR & PROGRESS (5 COLS) -->
+    <div class="lg:col-span-5 space-y-6">
+      
+      <!-- OVERALL PROGRESS CARD -->
+      <div class="glass-card rounded-2xl p-6 border border-emerald-500/20 shadow-xl bg-gradient-to-br from-emerald-900/10 to-transparent">
+        <div class="flex justify-between items-center mb-3">
+          <span class="text-xs font-semibold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">Overall Progress</span>
+          <span id="progressPercent" class="text-xl font-black text-emerald-700 dark:text-emerald-400">0%</span>
+        </div>
+        <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-3 overflow-hidden p-0.5 border border-slate-300/30">
+          <div id="progressBar" class="bg-gradient-to-r from-emerald-600 to-amber-400 h-full rounded-full transition-all duration-500 w-0"></div>
+        </div>
+        <div class="flex justify-between text-xs text-slate-500 dark:text-slate-400 mt-3">
+          <span id="completedTasksCount">0 of 0 tasks completed</span>
+          <span>90 Days Total</span>
+        </div>
+      </div>
+
+      <!-- PHASE & WEEK SELECTOR ACCORDION -->
+      <div class="glass-card rounded-2xl p-4 border border-slate-200 dark:border-slate-800 shadow-xl">
+        <h2 class="text-sm font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider px-2 mb-3 flex items-center">
+          <i class="fas fa-map text-emerald-600 mr-2"></i> Roadmap Timeline
+        </h2>
+        
+        <div id="phaseAccordion" class="space-y-3 custom-scrollbar max-h-[500px] overflow-y-auto pr-1">
+          <!-- Dynamically Generated Phases & Weeks -->
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN: ACTIVE WEEK DETAILS & TASKS (7 COLS) -->
+    <div class="lg:col-span-7 space-y-6">
+      
+      <!-- ACTIVE WEEK CARD -->
+      <div class="glass-card rounded-2xl p-6 sm:p-8 border border-emerald-500/30 shadow-xl relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-2xl pointer-events-none"></div>
+
+        <!-- Week Header -->
+        <div class="flex flex-wrap justify-between items-start gap-4 border-b border-slate-200 dark:border-slate-800 pb-4 mb-6">
+          <div>
+            <span id="activePhaseBadge" class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-300 mb-2 border border-emerald-500/20">
+              Phase 1
+            </span>
+            <h2 id="activeWeekTitle" class="text-2xl font-extrabold text-slate-900 dark:text-white">
+              Week 1: Competitor Research & Feature List
+            </h2>
+          </div>
+          <div class="text-right">
+            <span id="activeWeekProgress" class="text-sm font-bold text-emerald-600 dark:text-emerald-400">0% Done</span>
+          </div>
+        </div>
+
+        <!-- Actionable Checkable Tasks -->
+        <div class="space-y-4 mb-8">
+          <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Action Items for this week</h3>
+          <div id="taskList" class="space-y-3">
+            <!-- Dynamic Tasks Render Here -->
+          </div>
+        </div>
+
+        <!-- Key Deliverable Box -->
+        <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-4 flex items-start space-x-3">
+          <i class="fas fa-award text-amber-500 text-lg mt-0.5"></i>
+          <div>
+            <h4 class="text-xs font-bold text-amber-800 dark:text-amber-300 uppercase tracking-wider">Week Milestone Output</h4>
+            <p id="weekMilestone" class="text-sm text-slate-700 dark:text-slate-300 mt-1 font-medium">
+              Clear feature matrix document and defined V1 MVP list.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE APP PREVIEW DEMO -->
+      <div class="glass-card rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-xl">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider flex items-center">
+            <i class="fas fa-mobile-screen-button text-emerald-600 mr-2"></i> App Component Preview
+          </h3>
+          <span class="text-xs text-slate-400">Interactive Demo</span>
+        </div>
+
+        <!-- Component Selector Tabs -->
+        <div class="flex space-x-2 border-b border-slate-200 dark:border-slate-800 pb-3 mb-4 overflow-x-auto custom-scrollbar">
+          <button onclick="switchDemoTab('prayer')" id="tab-prayer" class="px-3 py-1.5 rounded-lg text-xs font-medium transition-all bg-emerald-600 text-white">Prayer Schedule</button>
+          <button onclick="switchDemoTab('habits')" id="tab-habits" class="px-3 py-1.5 rounded-lg text-xs font-medium transition-all bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Habit Checklist</button>
+          <button onclick="switchDemoTab('tasbeeh')" id="tab-tasbeeh" class="px-3 py-1.5 rounded-lg text-xs font-medium transition-all bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Tasbeeh Counter</button>
+          <button onclick="switchDemoTab('journal')" id="tab-journal" class="px-3 py-1.5 rounded-lg text-xs font-medium transition-all bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Reflection Journal</button>
+        </div>
+
+        <!-- DEMO TAB 1: PRAYER SCHEDULE -->
+        <div id="demo-prayer" class="demo-content bg-emerald-950 text-white rounded-xl p-5 shadow-inner">
+          <div class="flex justify-between items-center border-b border-emerald-800/60 pb-3 mb-4">
+            <div>
+              <p class="text-xs text-emerald-300">Next Prayer</p>
+              <h4 class="text-xl font-bold text-amber-400">Asr · 3:45 PM</h4>
+            </div>
+            <div class="text-right">
+              <span class="text-xs px-2 py-1 bg-emerald-900 rounded border border-emerald-700 text-emerald-200">14 Rabi' al-Thani</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-5 gap-2 text-center text-xs">
+            <div class="p-2 rounded bg-emerald-900/40 border border-emerald-800/40 opacity-70">Fajr<br><span class="font-bold">5:12 AM</span></div>
+            <div class="p-2 rounded bg-emerald-900/40 border border-emerald-800/40 opacity-70">Dhuhr<br><span class="font-bold">12:20 PM</span></div>
+            <div class="p-2 rounded bg-amber-500/20 border border-amber-400/40 text-amber-300 font-bold">Asr<br>3:45 PM</div>
+            <div class="p-2 rounded bg-emerald-900/40 border border-emerald-800/40">Maghrib<br><span class="font-bold">6:15 PM</span></div>
+            <div class="p-2 rounded bg-emerald-900/40 border border-emerald-800/40">Isha<br><span class="font-bold">7:30 PM</span></div>
+          </div>
+        </div>
+
+        <!-- DEMO TAB 2: HABIT CHECKLIST -->
+        <div id="demo-habits" class="demo-content hidden space-y-2">
+          <div class="flex items-center justify-between p-3 bg-slate-100 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+            <div class="flex items-center space-x-3">
+              <input type="checkbox" checked class="w-4 h-4 accent-emerald-600 rounded">
+              <span class="text-sm font-medium">Read 5 Pages of Quran</span>
+            </div>
+            <span class="text-xs px-2 py-0.5 rounded bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300 font-bold">🔥 12 Days</span>
+          </div>
+          <div class="flex items-center justify-between p-3 bg-slate-100 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
+            <div class="flex items-center space-x-3">
+              <input type="checkbox" class="w-4 h-4 accent-emerald-600 rounded">
+              <span class="text-sm font-medium">Morning Adhkar (Adhkar al-Sabah)</span>
+            </div>
+            <span class="text-xs px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300">Daily</span>
+          </div>
+        </div>
+
+        <!-- DEMO TAB 3: TASBEEH COUNTER -->
+        <div id="demo-tasbeeh" class="demo-content hidden text-center py-4 bg-slate-100 dark:bg-slate-900 rounded-xl">
+          <p class="text-xs text-slate-400 uppercase tracking-widest mb-1">SubhanAllah</p>
+          <div id="tasbeehVal" class="text-4xl font-extrabold text-emerald-600 dark:text-emerald-400 my-2">23</div>
+          <div class="flex justify-center space-x-3">
+            <button onclick="countTasbeeh()" class="px-6 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-sm font-bold shadow-md transition-all active:scale-95">Tap Count</button>
+            <button onclick="resetTasbeeh()" class="px-3 py-2 bg-slate-300 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-lg text-xs">Reset</button>
+          </div>
+        </div>
+
+        <!-- DEMO TAB 4: REFLECTION JOURNAL -->
+        <div id="demo-journal" class="demo-content hidden space-y-3">
+          <div class="flex justify-between items-center text-xs text-slate-400">
+            <span>Daily Mood Rating:</span>
+            <div class="flex space-x-1 text-amber-400">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+            </div>
+          </div>
+          <textarea readonly class="w-full text-xs p-3 rounded-lg bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 resize-none h-20 focus:outline-none" placeholder="What are you grateful for today?">Grateful for performing Fajr in congregation today. Focused on mindfulness and peace during work hours.</textarea>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-auto border-t border-slate-200 dark:border-slate-800 py-6 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4">
+      Islamic & Spiritual Wellness Habit Tracker — 12-Week Roadmap & Executable Manual
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT CODE -->
+  <script>
+    // ROADMAP DATA STRUCTURE
+    const roadmapData = [
+      {
+        phase: 1,
+        phaseTitle: "Phase 1: Research, Strategy & Architecture",
+        weeks: [
+          {
+            week: 1,
+            title: "Week 1: Competitor Research & Feature List",
+            milestone: "Competitor comparison matrix and finalized MVP feature list.",
+            tasks: [
+              "Download and analyze 3-4 top Islamic & habit tracking apps (e.g., Tarteel, Pillars, Habitica).",
+              "Identify missing features or UX friction in existing market apps.",
+              "Define core value proposition combining daily prayers with mental wellness.",
+              "Finalize feature list: separate into V1 (Must-Haves) and V2 (Post-Launch)."
+            ]
+          },
+          {
+            week: 2,
+            title: "Week 2: Product Planning & User Flow Mapping",
+            milestone: "User journey flow diagrams and screen navigation hierarchy.",
+            tasks: [
+              "Map user onboarding steps (Location setup, prayer method, initial habit selection).",
+              "Draw screen transition flows (Home -> Habit Check -> Tasbeeh -> Journal).",
+              "Choose tech stack: Frontend (React Native/Flutter), Backend (Supabase/Firebase), Prayer API (Aladhan).",
+              "Draft database tables for Users, Habits, Prayer Logs, and Journal Entries."
+            ]
+          },
+          {
+            week: 3,
+            title: "Week 3: Wireframing & Design System Setup",
+            milestone: "Complete wireframes and visual design tokens in Figma.",
+            tasks: [
+              "Sketch low-fidelity layouts for main dashboard, habits checklist, and digital Tasbeeh.",
+              "Establish visual identity (Emerald greens, soft creams, warm gold accents).",
+              "Select readable typography supporting both Latin and Arabic scripts.",
+              "Set up GitHub repository and project tracking board (Trello/Jira)."
+            ]
+          }
+        ]
+      },
+      {
+        phase: 2,
+        phaseTitle: "Phase 2: Core Development & Feature Building",
+        weeks: [
+          {
+            week: 4,
+            title: "Week 4: Accounts & Navigation Architecture",
+            milestone: "Working authentication flow and responsive bottom navigation bar.",
+            tasks: [
+              "Build user registration & secure login flow (Email, Google, Apple ID).",
+              "Create home dashboard layout with bottom tab navigation.",
+              "Set up encrypted local database storage for offline access."
+            ]
+          },
+          {
+            week: 5,
+            title: "Week 5: Prayer Times & Dashboard Integration",
+            milestone: "Dynamic location-based prayer timing widget with countdowns.",
+            tasks: [
+              "Integrate location services for dynamic daily coordinate acquisition.",
+              "Connect Aladhan API to calculate local prayer timing schedules.",
+              "Build daily home screen dashboard with Hijri date and prayer time countdowns."
+            ]
+          },
+          {
+            week: 6,
+            title: "Week 6: Habit Tracking & Streaks Engine",
+            milestone: "Interactive habit checklist with streak counter calculations.",
+            tasks: [
+              "Build habit check-off logic (Salah toggles, Quran Surah/page tracking).",
+              "Implement habit streak counter algorithm for consecutive completions.",
+              "Build habit creation modal with custom frequencies."
+            ]
+          },
+          {
+            week: 7,
+            title: "Week 7: Tasbeeh Counter & Reflection Journal",
+            milestone: "Functional Tasbeeh counter tool and daily journal input module.",
+            tasks: [
+              "Build digital Tasbeeh counter with vibration feedback and customizable targets.",
+              "Create daily reflection journal interface with mood selectors (1-5 scale).",
+              "Implement local auto-save for unsubmitted journal entries."
+            ]
+          },
+          {
+            week: 8,
+            title: "Week 8: Reminders & Push Notifications",
+            milestone: "Local notification system triggering for prayer times & habit nudges.",
+            tasks: [
+              "Set up local push notifications for dynamic prayer time alerts.",
+              "Schedule daily reminders for morning/evening Adhkar.",
+              "Add custom gentle nudges for evening reflection journal logging."
+            ]
+          }
+        ]
+      },
+      {
+        phase: 3,
+        phaseTitle: "Phase 3: Refinement, Testing & Polish",
+        weeks: [
+          {
+            week: 9,
+            title: "Week 9: UI Micro-Interactions & Offline Optimization",
+            milestone: "Polished UI transitions, theme support, and seamless offline sync.",
+            tasks: [
+              "Add smooth micro-animations for habit completion and Tasbeeh taps.",
+              "Ensure total offline functionality for prayer scheduling & journal entries.",
+              "Implement light/dark mode color contrast accessibility tweaks."
+            ]
+          },
+          {
+            week: 10,
+            title: "Week 10: Closed Beta Testing & Bug Fixes",
+            milestone: "Beta release deployed to 20 users with bug fix report.",
+            tasks: [
+              "Deploy test build via TestFlight (iOS) and Google Play Internal Testing.",
+              "Distribute test builds to 15-20 target users (friends, family, community).",
+              "Collect feedback on calculation accuracy and notification timing.",
+              "Fix critical bugs, app crashes, and visual overlap glitches."
+            ]
+          }
+        ]
+      },
+      {
+        phase: 4,
+        phaseTitle: "Phase 4: Final Testing & Store Deployment",
+        weeks: [
+          {
+            week: 11,
+            title: "Week 11: Store Assets & Final QA",
+            milestone: "Complete app store listings with previews and privacy policies.",
+            tasks: [
+              "Perform complete offline, timezone change, and battery consumption audits.",
+              "Prepare App Store & Google Play assets (Screenshots, descriptions, keywords).",
+              "Draft clear Privacy Policy URL regarding location and personal journal data."
+            ]
+          },
+          {
+            week: 12,
+            title: "Week 12: Public Launch & Monitoring",
+            milestone: "App live on Apple App Store & Google Play Store.",
+            tasks: [
+              "Submit production binaries to Apple App Store and Google Play Store.",
+              "Announce launch across social channels, community groups, and personal network.",
+              "Monitor error analytics (Sentry/Crashlytics) and schedule minor bug-fix update."
+            ]
+          }
+        ]
+      }
+    ];
+
+    // STATE VARIABLES
+    let activeWeekNum = 1;
+    let completedTasks = JSON.parse(localStorage.getItem('habitTracker_tasks')) || {};
+    let currentTasbeehCount = 23;
+
+    // INITIALIZATION
+    document.addEventListener('DOMContentLoaded', () => {
+      initTheme();
+      renderAccordion();
+      selectWeek(1);
+      updateOverallProgress();
+    });
+
+    // RENDER ACCORDION IN LEFT PANEL
+    function renderAccordion() {
+      const container = document.getElementById('phaseAccordion');
+      container.innerHTML = '';
+
+      roadmapData.forEach(p => {
+        const phaseDiv = document.createElement('div');
+        phaseDiv.className = 'border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden';
+        
+        let weeksHTML = p.weeks.map(w => {
+          const isSelected = w.week === activeWeekNum;
+          return `
+            <button onclick="selectWeek(${w.week})" class="w-full text-left px-3 py-2 text-xs font-medium flex items-center justify-between transition-all ${isSelected ? 'bg-emerald-600 text-white font-bold' : 'hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300'}">
+              <span>W${w.week}: ${w.title.split(': ')[1]}</span>
+              <i class="fas fa-chevron-right text-[10px] opacity-60"></i>
+            </button>
+          `;
+        }).join('');
+
+        phaseDiv.innerHTML = `
+          <div class="bg-slate-100 dark:bg-slate-900 px-3 py-2 text-xs font-bold text-emerald-700 dark:text-emerald-400 border-b border-slate-200 dark:border-slate-800">
+            ${p.phaseTitle}
+          </div>
+          <div class="divide-y divide-slate-200 dark:divide-slate-800">
+            ${weeksHTML}
+          </div>
+        `;
+        container.appendChild(phaseDiv);
+      });
+    }
+
+    // SELECT WEEK & RENDER ACTIVE TASKS
+    function selectWeek(weekNum) {
+      activeWeekNum = weekNum;
+      renderAccordion();
+
+      let targetWeek = null;
+      let targetPhase = null;
+
+      for (let p of roadmapData) {
+        for (let w of p.weeks) {
+          if (w.week === weekNum) {
+            targetWeek = w;
+            targetPhase = p;
+            break;
+          }
+        }
+      }
+
+      if (!targetWeek) return;
+
+      document.getElementById('activePhaseBadge').innerText = `Phase ${targetPhase.phase}`;
+      document.getElementById('activeWeekTitle').innerText = targetWeek.title;
+      document.getElementById('weekMilestone').innerText = targetWeek.milestone;
+
+      // Render Tasks
+      const taskContainer = document.getElementById('taskList');
+      taskContainer.innerHTML = '';
+
+      targetWeek.tasks.forEach((taskText, idx) => {
+        const taskId = `w${weekNum}_t${idx}`;
+        const isChecked = !!completedTasks[taskId];
+
+        const taskRow = document.createElement('label');
+        taskRow.className = `flex items-start space-x-3 p-3 rounded-xl border transition-all cursor-pointer ${isChecked ? 'bg-emerald-500/10 border-emerald-500/30 line-through text-slate-400 dark:text-slate-500' : 'bg-slate-100 dark:bg-slate-900/60 border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 hover:border-emerald-500/30'}`;
+        
+        taskRow.innerHTML = `
+          <input type="checkbox" onchange="toggleTask('${taskId}')" ${isChecked ? 'checked' : ''} class="mt-0.5 w-4 h-4 accent-emerald-600 rounded cursor-pointer">
+          <span class="text-xs sm:text-sm leading-relaxed font-medium">${taskText}</span>
+        `;
+        taskContainer.appendChild(taskRow);
+      });
+
+      updateWeekProgressDisplay(targetWeek);
+    }
+
+    // TOGGLE TASK STATUS
+    function toggleTask(taskId) {
+      completedTasks[taskId] = !completedTasks[taskId];
+      localStorage.setItem('habitTracker_tasks', JSON.stringify(completedTasks));
+
+      selectWeek(activeWeekNum);
+      updateOverallProgress();
+    }
+
+    // UPDATE PROGRESS METRICS
+    function updateWeekProgressDisplay(week) {
+      let total = week.tasks.length;
+      let done = 0;
+      week.tasks.forEach((_, idx) => {
+        if (completedTasks[`w${week.week}_t${idx}`]) done++;
+      });
+
+      let pct = total > 0 ? Math.round((done / total) * 100) : 0;
+      document.getElementById('activeWeekProgress').innerText = `${pct}% Done`;
+    }
+
+    function updateOverallProgress() {
+      let totalTasks = 0;
+      let completedCount = 0;
+
+      roadmapData.forEach(p => {
+        p.weeks.forEach(w => {
+          w.tasks.forEach((_, idx) => {
+            totalTasks++;
+            if (completedTasks[`w${w.week}_t${idx}`]) completedCount++;
+          });
+        });
+      });
+
+      let pct = totalTasks > 0 ? Math.round((completedCount / totalTasks) * 100) : 0;
+      document.getElementById('progressPercent').innerText = `${pct}%`;
+      document.getElementById('progressBar').style.width = `${pct}%`;
+      document.getElementById('completedTasksCount').innerText = `${completedCount} of ${totalTasks} tasks completed`;
+    }
+
+    function resetProgress() {
+      if (confirm('Are you sure you want to reset all weekly progress tracking?')) {
+        completedTasks = {};
+        localStorage.removeItem('habitTracker_tasks');
+        selectWeek(activeWeekNum);
+        updateOverallProgress();
+      }
+    }
+
+    // INTERACTIVE DEMO TAB SWITCHER
+    function switchDemoTab(tabKey) {
+      document.querySelectorAll('.demo-content').forEach(el => el.classList.add('hidden'));
+      document.getElementById(`demo-${tabKey}`).classList.remove('hidden');
+
+      ['prayer', 'habits', 'tasbeeh', 'journal'].forEach(k => {
+        const btn = document.getElementById(`tab-${k}`);
+        if (k === tabKey) {
+          btn.className = 'px-3 py-1.5 rounded-lg text-xs font-medium transition-all bg-emerald-600 text-white';
+        } else {
+          btn.className = 'px-3 py-1.5 rounded-lg text-xs font-medium transition-all bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300';
+        }
+      });
+    }
+
+    function countTasbeeh() {
+      currentTasbeehCount++;
+      document.getElementById('tasbeehVal').innerText = currentTasbeehCount;
+    }
+
+    function resetTasbeeh() {
+      currentTasbeehCount = 0;
+      document.getElementById('tasbeehVal').innerText = currentTasbeehCount;
+    }
+
+    // DARK / LIGHT THEME TOGGLE
+    function initTheme() {
+      const themeBtn = document.getElementById('themeToggle');
+      const themeIcon = document.getElementById('themeIcon');
+
+      const isDark = localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+      if (isDark) {
+        document.documentElement.classList.add('dark');
+        themeIcon.className = 'fas fa-sun text-amber-400';
+      } else {
+        document.documentElement.classList.remove('dark');
+        themeIcon.className = 'fas fa-moon text-emerald-200';
+      }
+
+      themeBtn.addEventListener('click', () => {
+        if (document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+          themeIcon.className = 'fas fa-moon text-emerald-200';
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+          themeIcon.className = 'fas fa-sun text-amber-400';
+        }
+      });
+    }
+  </script>
 </body>
-  </html>
+</html>
