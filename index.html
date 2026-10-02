@@ -1,1 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>12-Week Roadmap: Islamic & Spiritual Wellness Habit Tracker</title>
+<style>
+@page { margin: 0; }
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { background-color: #ffffff; }
+@media (prefers-color-scheme: dark) {
+html { background-color: #1f1f1f; }
+}
+body {
+padding: 24px 0;
+margin: 0 auto;
+max-width: 900px !important;
+border: none !important;
+background: transparent !important;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+color: #1e293b;
+line-height: 1.45;
+}
+.page {
+height: 297mm;
+margin: 0 auto 12px auto;
+padding: 16mm 18mm 12mm 18mm;
+background-color: #ffffff;
+border: 1px solid rgba(0, 0, 0, 0.12);
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+position: relative;
+overflow: hidden;
+}
+@media screen and (max-width: 600px) {
+body { padding: 16px 0; }
+.page {
+margin: 0 auto 8px auto;
+border: none;
+padding: 12px 16px;
+}
+}
+.page-content {
+flex: 1 1 0;
+min-height: 0;
+overflow: hidden;
+}
+.page-footer {
+flex-shrink: 0;
+margin-top: auto;
+padding-top: 3mm;
+border-top: 1px solid #e2e8f0;
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-size: 8.5pt;
+color: #64748b;
+}
+​/* Header & Banner Styles */
+.header-banner {
+background: linear-gradient(135deg, #064e3b 0%, #047857 100%);
+color: #ffffff;
+padding: 20px 24px;
+border-radius: 10px;
+margin-bottom: 18px;
+border-bottom: 4px solid #f59e0b;
+}
+.header-banner h1 {
+margin: 0 0 6px 0;
+font-size: 20pt;
+font-weight: 800;
+letter-spacing: -0.02em;
+color: #ffffff;
+}
+.header-banner p {
+margin: 0;
+font-size: 10pt;
+color: #a7f3d0;
+font-weight: 500;
+}
+​/* Meta Data Cards */
+.meta-grid {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 10px;
+margin-bottom: 18px;
+}
+.meta-card {
+background: #f8fafc;
+border: 1px solid #e2e8f0;
+border-radius: 8px;
+padding: 10px 12px;
+}
+.meta-card .label {
+font-size: 7.5pt;
+text-transform: uppercase;
+letter-spacing: 0.05em;
+color: #64748b;
+font-weight: 700;
+margin-bottom: 4px;
+}
+.meta-card .value {
+font-size: 10pt;
+font-weight: 700;
+color: #064e3b;
+}
+​/* Section Styling */
+.section-header {
+display: flex;
+align-items: center;
+gap: 10px;
+margin-bottom: 12px;
+border-bottom: 2px solid #047857;
+padding-bottom: 6px;
+}
+.section-badge {
+background: #047857;
+color: #ffffff;
+font-size: 9pt;
+font-weight: 800;
+padding: 3px 10px;
+border-radius: 4px;
+text-transform: uppercase;
+}
+.section-title {
+margin: 0;
+font-size: 13pt;
+font-weight: 700;
+color: #0f172a;
+}
+​/* Week Block Cards */
+.week-card {
+background: #ffffff;
+border: 1px solid #cbd5e1;
+border-left: 5px solid #047857;
+border-radius: 8px;
+padding: 12px 14px;
+margin-bottom: 12px;
+}
+.week-card.phase-2 { border-left-color: #0284c7; }
+.week-card.phase-3 { border-left-color: #d97706; }
+.week-card.phase-4 { border-left-color: #16a34a; }
+​.week-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 8px;
+}
+.week-title {
+font-size: 11pt;
+font-weight: 700;
+color: #0f172a;
+margin: 0;
+}
+.week-tag {
+font-size: 8pt;
+font-weight: 700;
+padding: 2px 8px;
+border-radius: 12px;
+background: #f1f5f9;
+color: #475569;
+}
+​.task-list {
+margin: 0;
+padding-left: 18px;
+font-size: 9.5pt;
+color: #334155;
+}
+.task-list li {
+margin-bottom: 5px;
+}
+.task-list li:last-child {
+margin-bottom: 0;
+}
+.task-list strong {
+color: #0f172a;
+}
+​/* Infographic / Summary Cards */
+.summary-box {
+background: #f0fdf4;
+border: 1px solid #bbf7d0;
+border-radius: 8px;
+padding: 12px;
+margin-top: 14px;
+}
+.summary-box h4 {
+margin: 0 0 6px 0;
+font-size: 10pt;
+color: #166534;
+}
+.summary-box p {
+margin: 0;
+font-size: 9pt;
+color: #15803d;
+}
+​/* Key Checklist Matrix Table */
+.matrix-table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 10px;
+font-size: 9pt;
+}
+.matrix-table th {
+background: #047857;
+color: #ffffff;
+text-align: left;
+padding: 8px 10px;
+font-weight: 700;
+}
+.matrix-table td {
+padding: 7px 10px;
+border-bottom: 1px solid #e2e8f0;
+}
+.matrix-table tr:nth-child(even) {
+background: #f8fafc;
+}
+​/* Callout Note */
+.callout {
+background: #fffbebfb;
+border: 1px solid #fde68a;
+border-left: 4px solid #f59e0b;
+padding: 10px 12px;
+border-radius: 6px;
+font-size: 9pt;
+color: #78350f;
+margin-bottom: 12px;
+}
+</style>
+</head>
+<body>
+<div contenteditable="true">
+​<!-- PAGE 1 -->
+<section class="page">
+<div class="page-content">
+​<!-- Banner -->
+<div class="header-banner">
+<h1>Islamic & Spiritual Wellness Habit Tracker</h1>
+<p>12-Week Non-Technical Execution Roadmap & Action Guide</p>
+</div>
+​<!-- Overview Stats -->
+<div class="meta-grid">
+<div class="meta-card">
+<div class="label">Total Duration</div>
+<div class="value">12 Weeks (3 Months)</div>
+</div>
+<div class="meta-card">
+<div class="label">Target Output</div>
+<div class="value">iOS & Android MVP</div>
+</div>
+<div class="meta-card">
+<div class="label">Core Focus</div>
+<div class="value">Salah, Dhikr, Journal</div>
+</div>
+<div class="meta-card">
+<div class="label">Testing Window</div>
+<div class="value">Weeks 10 & 11</div>
+</div>
+</div>
+​<div class="callout">
+<strong>Strategic Focus:</strong> This roadmap maps out the exact non-technical step-by-step tasks required to plan, test, refine, and release your app within 90 days without writing code directly.
+</div>
+​<!-- Phase 1 Header -->
+<div class="section-header">
+<span class="section-badge">Phase 1</span>
+<h2 class="section-title">Research, Strategy & App Design (Weeks 1–3)</h2>
+</div>
+​<!-- Week 1 Card -->
+<div class="week-card">
+<div class="week-header">
+<h3 class="week-title">Week 1: Market Research & Feature Blueprint</h3>
+<span class="week-tag">Strategy & Vision</span>
+</div>
+<ul class="task-list">
+<li><strong>Competitor Analysis:</strong> Download 3–4 Islamic apps (Tarteel, Muslim Habits, Pillars, Habitica). Note down strengths, missing options, and screen layouts.</li>
+<li><strong>Define Unique Value:</strong> Clarify your core vision — combining prayer/dhikr tracking with daily mental wellness and personal reflection.</li>
+<li><strong>Categorize Features:</strong> Split planned features into <em>MVP Essentials</em> (Salah, Tasbeeh counter, journal, streaks) and <em>Future Updates</em> (community groups, audio recitations).</li>
+</ul>
+</div>
+​<!-- Week 2 Card -->
+<div class="week-card">
+<div class="week-header">
+<h3 class="week-title">Week 2: User Journeys & Screen Sketches</h3>
+<span class="week-tag">App Flow & UX</span>
+</div>
+<ul class="task-list">
+<li><strong>Map User Steps:</strong> Outline the step-by-step path: Onboarding → Location Setup → Daily Home View → Complete Habit → Journal Entry.</li>
+<li><strong>Draft Screen Wireframes:</strong> Sketch key screens on paper or Figma:
 
+• Screen 1: Home Dashboard (Upcoming Prayer & Habit Checklist)
+
+• Screen 2: Tasbeeh / Dhikr Counter View
+
+• Screen 3: Daily Reflection & Gratitude Journal
+
+• Screen 4: Streak Calendar & Progress Stats
+</li>
+</ul>
+</div>
+​<!-- Week 3 Card -->
+<div class="week-card">
+<div class="week-header">
+<h3 class="week-title">Week 3: Visual Identity & Prototype Finalization</h3>
+<span class="week-tag">UI Design & Themes</span>
+</div>
+<ul class="task-list">
+<li><strong>Brand Color & Typography:</strong> Select a calm spiritual palette (emerald green, warm cream, subtle gold, neutral dark slate).</li>
+<li><strong>Design High-Fidelity Views:</strong> Finalize exact screen designs in Figma so you have a complete visual model before build phase.</li>
+<li><strong>Task Management Setup:</strong> Organize a project board in Notion or Trello with weekly checklists.</li>
+</ul>
+</div>
+​</div>
+<footer class="page-footer">
+<span>Islamic Habit Tracker Roadmap</span>
+<span>Page 1 of 3</span>
+</footer>
+</section>
+​<!-- PAGE 2 -->
+<section class="page">
+<div class="page-content">
+​<!-- Phase 2 Header -->
+<div class="section-header">
+<span class="section-badge" style="background:#0284c7;">Phase 2</span>
+<h2 class="section-title">Core App Building & Engine Setup (Weeks 4–8)</h2>
+</div>
+​<!-- Week 4 Card -->
+<div class="week-card phase-2">
+<div class="week-header">
+<h3 class="week-title">Week 4: User Accounts & Core Layout Structure</h3>
+<span class="week-tag">Foundation</span>
+</div>
+<ul class="task-list">
+<li><strong>Onboarding Flow:</strong> Build user registration, welcome intro screens, and login options (Email, Google, Apple ID).</li>
+<li><strong>App Navigation Bar:</strong> Setup the main tab bar at the bottom to easily switch between Home, Tasbeeh, Reflection, and Settings.</li>
+</ul>
+</div>
+​<!-- Week 5 Card -->
+<div class="week-card phase-2">
+<div class="week-header">
+<h3 class="week-title">Week 5: Prayer Times & Daily Dashboard</h3>
+<span class="week-tag">Prayer API & Home</span>
+</div>
+<ul class="task-list">
+<li><strong>Location Services Integration:</strong> Enable auto-detection of user location to calculate exact local prayer times.</li>
+<li><strong>Build Main Dashboard:</strong> Display current Hijri date, next prayer countdown, and daily active habits in a clean list.</li>
+</ul>
+</div>
+​<!-- Week 6 Card -->
+<div class="week-card phase-2">
+<div class="week-header">
+<h3 class="week-title">Week 6: Islamic & Wellness Habit Trackers</h3>
+<span class="week-tag">Habits Engine</span>
+</div>
+<ul class="task-list">
+<li><strong>Habit Checklists:</strong> Create tap-to-complete actions for daily Salah, Quran reading pages, and custom habits.</li>
+<li><strong>Habit Streaks System:</strong> Add daily counters to show consecutive completion days and build user consistency.</li>
+</ul>
+</div>
+​<!-- Week 7 Card -->
+<div class="week-card phase-2">
+<div class="week-header">
+<h3 class="week-title">Week 7: Tasbeeh Counter & Reflection Journal</h3>
+<span class="week-tag">Spiritual Tools</span>
+</div>
+<ul class="task-list">
+<li><strong>Digital Tasbeeh Counter:</strong> Build a smooth counter screen with sound/vibration feedback, target counts, and quick reset.</li>
+<li><strong>Daily Journal Module:</strong> Create a daily writing space with mood check-ins (1–5) and prompts for spiritual gratitude.</li>
+</ul>
+</div>
+​<!-- Week 8 Card -->
+<div class="week-card phase-2">
+<div class="week-header">
+<h3 class="week-title">Week 8: Reminders & Notification Setup</h3>
+<span class="week-tag">Notifications</span>
+</div>
+<ul class="task-list">
+<li><strong>Prayer Alerts:</strong> Configure automated notifications before or at each prayer time based on local times.</li>
+<li><strong>Daily Habit Nudges:</strong> Set customizable morning/evening reminders for Adhkar and daily reflection journaling.</li>
+</ul>
+</div>
+​</div>
+<footer class="page-footer">
+<span>Islamic Habit Tracker Roadmap</span>
+<span>Page 2 of 3</span>
+</footer>
+</section>
+​<!-- PAGE 3 -->
+<section class="page">
+<div class="page-content">
+​<!-- Phase 3 Header -->
+<div class="section-header">
+<span class="section-badge" style="background:#d97706;">Phase 3</span>
+<h2 class="section-title">Refinement, Testing & Bug Fixing (Weeks 9–10)</h2>
+</div>
+​<!-- Week 9 Card -->
+<div class="week-card phase-3">
+<div class="week-header">
+<h3 class="week-title">Week 9: Visual Polish & Offline Support</h3>
+<span class="week-tag">User Experience</span>
+</div>
+<ul class="task-list">
+<li><strong>Animations & Micro-Interactions:</strong> Add smooth checkmark completion animations and subtle haptic feedback.</li>
+<li><strong>Offline Functionality:</strong> Ensure prayer times, habit checks, and journal entries work fully without an active internet connection.</li>
+</ul>
+</div>
+​<!-- Week 10 Card -->
+<div class="week-card phase-3">
+<div class="week-header">
+<h3 class="week-title">Week 10: Closed Beta Testing & Community Feedback</h3>
+<span class="week-tag">Beta Testing</span>
+</div>
+<ul class="task-list">
+<li><strong>Beta Build Distribution:</strong> Share test build with 15–30 testers (family, friends, community members) via TestFlight / Google Play.</li>
+<li><strong>Feedback & Bug Fixing:</strong> Collect user feedback on prayer time accuracy, notification reliability, and fix reported issues.</li>
+</ul>
+</div>
+​<!-- Phase 4 Header -->
+<div class="section-header" style="margin-top:16px;">
+<span class="section-badge" style="background:#16a34a;">Phase 4</span>
+<h2 class="section-title">App Store Launch & Deployment (Weeks 11–12)</h2>
+</div>
+​<!-- Week 11 Card -->
+<div class="week-card phase-4">
+<div class="week-header">
+<h3 class="week-title">Week 11: Store Page Setup & Final QA</h3>
+<span class="week-tag">Preparation</span>
+</div>
+<ul class="task-list">
+<li><strong>App Store Listings:</strong> Write app descriptions, keywords, privacy policy terms, and design preview screenshots.</li>
+<li><strong>Final Quality Audit:</strong> Verify overall app performance, time zone updates, and notification triggers.</li>
+</ul>
+</div>
+​<!-- Week 12 Card -->
+<div class="week-card phase-4">
+<div class="week-header">
+<h3 class="week-title">Week 12: Public Launch & Growth</h3>
+<span class="week-tag">Release</span>
+</div>
+<ul class="task-list">
+<li><strong>Production Launch:</strong> Submit and publish application on Apple App Store and Google Play Store.</li>
+<li><strong>Community Outreach:</strong> Share store links with personal networks, Islamic groups, and social channels.</li>
+</ul>
+</div>
+​<!-- Deliverables Summary Table -->
+<div style="margin-top:14px;">
+<h3 style="font-size:10pt; margin:0 0 6px 0; color:#0f172a; text-transform:uppercase; letter-spacing:0.05em;">Weekly Milestones Overview</h3>
+<table class="matrix-table">
+<thead>
+<tr>
+<th style="width:20%;">Phase</th>
+<th style="width:20%;">Weeks</th>
+<th style="width:60%;">Key Milestone Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Strategy & Design</strong></td>
+<td>Weeks 1 – 3</td>
+<td>Wireframes, Figma UI, Competitor Blueprint, Task Board</td>
+</tr>
+<tr>
+<td><strong>2. Core Building</strong></td>
+<td>Weeks 4 – 8</td>
+<td>Auth, Prayer Engine, Habit Streaks, Tasbeeh & Notifications</td>
+</tr>
+<tr>
+<td><strong>3. Testing & Polish</strong></td>
+<td>Weeks 9 – 10</td>
+<td>Offline Mode, 20-User Beta Release, Bug Resolution</td>
+</tr>
+<tr>
+<td><strong>4. Launch</strong></td>
+<td>Weeks 11 – 12</td>
+<td>Store Graphics, Apple/Google Approval, Public Release</td>
+</tr>
+</tbody>
+</table>
+</div>
+​</div>
+<footer class="page-footer">
+<span>Islamic Habit Tracker Roadmap</span>
+<span>Page 3 of 3</span>
+</footer>
+</section>
+​</div>
+</body>
+  </html>
